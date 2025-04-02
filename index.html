@@ -1,26 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>browser-bash-bonanza</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="browser-bash-bonanza" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <title>Block Breaker</title>
+    <meta name="description" content="A simple block breaker game" />
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="game-container">
+      <div class="menu-screen" id="startScreen">
+        <h1>Block Breaker</h1>
+        <div class="difficulty-selection">
+          <h2>Select Difficulty:</h2>
+          <button class="btn" data-difficulty="easy">Easy</button>
+          <button class="btn" data-difficulty="medium">Medium</button>
+          <button class="btn" data-difficulty="hard">Hard</button>
+        </div>
+      </div>
+      
+      <div class="game-screen hidden" id="gameScreen">
+        <div class="game-header">
+          <div class="score">Score: <span id="score">0</span></div>
+          <div class="lives">Lives: <span id="lives">3</span></div>
+          <div class="level">Level: <span id="level">1</span></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+      </div>
+      
+      <div class="menu-screen hidden" id="gameOverScreen">
+        <h1>Game Over</h1>
+        <div class="final-score">Final Score: <span id="finalScore">0</span></div>
+        <button class="btn" id="playAgainBtn">Play Again</button>
+      </div>
+    </div>
+    <script src="game.js"></script>
   </body>
 </html>
