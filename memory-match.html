@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Match</title>
+    <meta name="description" content="A fun memory matching card game" />
+    <link rel="stylesheet" href="memory-match.css">
+  </head>
+
+  <body>
+    <div class="game-container">
+      <div class="menu-screen" id="startScreen">
+        <h1>Memory Match</h1>
+        <div class="difficulty-selection">
+          <h2>Select Difficulty:</h2>
+          <button class="btn" data-difficulty="easy">Easy (4x3)</button>
+          <button class="btn" data-difficulty="medium">Medium (4x4)</button>
+          <button class="btn" data-difficulty="hard">Hard (5x4)</button>
+        </div>
+      </div>
+      
+      <div class="game-screen hidden" id="gameScreen">
+        <div class="game-header">
+          <div class="moves">Moves: <span id="moves">0</span></div>
+          <div class="timer">Time: <span id="timer">00:00</span></div>
+          <button class="restart-btn" id="restartBtn">Restart</button>
+        </div>
+        <div id="game-board" class="game-board"></div>
+      </div>
+      
+      <div class="menu-screen hidden" id="gameOverScreen">
+        <h1>Well Done!</h1>
+        <div class="final-stats">
+          <div>Completed in <span id="finalTime">00:00</span></div>
+          <div>Total Moves: <span id="finalMoves">0</span></div>
+          <div class="star-rating">Rating: <span id="starRating"></span></div>
+        </div>
+        <button class="btn" id="playAgainBtn">Play Again</button>
+      </div>
+    </div>
+    <script src="memory-match.js"></script>
+  </body>
+</html>
